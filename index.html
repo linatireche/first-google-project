@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; 
+    background-color: #000000;
+  }
+
+
+
+/* toolsbar */
+.tools {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.links {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 10px;
+  position: relative;
+}
+
+.links a {
+  text-decoration: none;
+  color: #4285f4;
+  font-size: 14px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.links a:hover {
+  background-color: rgba(66, 133, 244, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(66, 133, 244, 0.2);
+}
+
+.links a:active {
+  transform: translateY(1px);
+  background-color: rgba(66, 133, 244, 0.2);
+  box-shadow: 0 2px 4px rgba(66, 133, 244, 0.3);
+}
+
+.links select {
+  background-color: rgba(66, 133, 244, 0.1);
+  border: 2px solid #4285f4;
+  color: #4285f4;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+.links select:hover {
+  background-color: rgba(66, 133, 244, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(66, 133, 244, 0.2);
+}
+
+.links select:focus {
+  animation: buttonPulse 1.5s infinite;
+  background-color: #fff;
+}
+
+.links select:active {
+  transform: translateY(1px);
+  background-color: rgba(66, 133, 244, 0.2);
+  box-shadow: 0 2px 4px rgba(66, 133, 244, 0.3);
+}
+/* toolsbar */
+
+  /* styling du logo  */
+/* contenaire du logo */
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+background-color: rgb(0, 0, 0);
+    height: 250px;
+    width: 745px;
+    position: absolute;
+    top: 150px;
+    left: 27.7%;}
+    /* contenaire du logo */
+    /* logo image */
+    .logo .image {
+      height: auto;
+      width: 100%;
+    }
+  /* logo image */
+  /* styling du logo  */
+
+
+
+ 
+/* search input styling */
+.search input[type="search"] {
+    width: 750px;
+    height: 60px;
+    border: 2px solid #4285f4;
+    border-radius: 25px;
+    padding: 5px 10px;
+    font-size: 16px;
+    outline: none;
+    top: 325px;
+    left: 28%;
+    position: absolute;
+    background-color: rgba(66, 133, 244, 0.1);
+    color: #4285f4;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.search input[type="search"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(66, 133, 244, 0.2);
+    background-color: rgba(66, 133, 244, 0.15);
+    border-color: #5c9fff;
+}
+
+.search input[type="search"]:focus {
+    outline: none;
+    animation: buttonPulse 1.5s infinite;
+    background-color: #fff;
+}
+
+.search input[type="search"]:active {
+    transform: translateY(1px);
+    background-color: rgba(66, 133, 244, 0.2);
+    box-shadow: 0 2px 6px rgba(66, 133, 244, 0.3);
+}
+
+/* search input styling */
+
+/* styling des deux buttons sous la barre de recherche  */
+.btn {
+    position: absolute;
+    top: 480px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 30px;
+    background: transparent;
+}
+
+.btn .button {
+    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 2px solid #4285f4;
+    background-color: rgba(66, 133, 244, 0.1);
+    color: #4285f4;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn .button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(66, 133, 244, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease-out, height 0.6s ease-out;
+}
+
+.btn .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(66, 133, 244, 0.2);
+    background-color: rgba(66, 133, 244, 0.15);
+    border-color: #5c9fff;
+}
+
+.btn .button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn .button:active {
+    transform: translateY(1px);
+    background-color: rgba(66, 133, 244, 0.2);
+    box-shadow: 0 2px 6px rgba(66, 133, 244, 0.3);
+}
+
+@keyframes buttonPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(66, 133, 244, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(66, 133, 244, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(66, 133, 244, 0);
+    }
+}
+
+.btn .button:focus {
+    outline: none;
+    animation: buttonPulse 1.5s infinite;
+}
+
+/* styling des deux buttons sous la barre de recherche  */
+
+
+
+
+/* footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.footer .footer-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  
+  background-color: transparent;
+  border-top: 1px solid #4285f4; 
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #4285f4;
+  font-size: 14px; 
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+.left a , .right a  {margin-left: 25px;}
+/* footer */
+
+
+</style>
+</head>
+
+<body>
+  
+<div class="tools">
+  <div class="links gmail"><a href="#">Gmail</a></div>
+  <div class="links images"><a href="#">Images</a></div>
+  <div class="links apps">
+    <select name="apps" id="apps" title="apps">
+      <option value="" selected>Google Apps</option>
+      <option value="docs">Google Docs</option>
+      <option value="sheets">Google Sheets</option>
+      <option value="slides">Google Slides</option>
+      <option value="drive">Google Drive</option>
+      <option value="calendar">Google Calendar</option>
+      <option value="meet">Google Meet</option>
+      <option value="forms">Google Forms</option>
+    </select>
+  </div>
+  <div class="links sign-in"><a href="#">Sign In</a></div>
+</div>
+
+
+
+
+<div class="container">
+
+<div class="logo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzla3qBzaUrMJxtu93MUXgT5-q3EHnSDGkjRb0fSze7A&s&ec=72940543" alt=""></div>
+
+
+<div class="search-bar">
+  <div class="search"><input type="search" placeholder="Search Google or Place a url" required></div>
+  <div class="btn"> 
+    <button class="button" >Google Search</button>
+    <button class="button">I'm Feeling Lucky</button>
+</div>
+ 
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="footer">
+
+
+<div class="footer-links">
+  <div class="left">
+    <a href="#">About</a>
+    <a href="#">Advertising</a>
+    <a href="#">Business</a>
+    <a href="#">How Search works</a>
+  </div>
+  <div class="right">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Settings</a>
+  </div>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
